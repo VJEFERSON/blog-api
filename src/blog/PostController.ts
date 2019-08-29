@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { PostService } from './services/PostService';
 import { PostEntity } from './entities/PostEntity';
 import { CreatePostDto } from './dtos/CreatePostDto';
+import { PostDto } from './dtos/PostDto';
 
 @Controller('posts')
 export class PostController {
@@ -16,8 +17,7 @@ export class PostController {
     }
 
     @Post()
-    create(@Body() createPostDto: CreatePostDto) {
-        this.postService.create(createPostDto);
-        return 'ok';
+    create(@Body() createPostDto: CreatePostDto): Promise<PostDto> {
+        return this.postService.create(createPostDto);
     }
 }
