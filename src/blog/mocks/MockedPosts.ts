@@ -1,4 +1,4 @@
-import { PostModel } from "../models/PostModel";
+import { Post } from "../entities/Post";
 
 export const MockedPosts: PostModel[]=[
     {

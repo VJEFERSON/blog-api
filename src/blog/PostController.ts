@@ -1,16 +1,23 @@
-import { Controller, Get} from "@nestjs/common";
-import { Observable } from "rxjs";
-import { PostModel } from "./models/PostModel";
+import { Controller, Get, Post, Body} from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { PostService } from './services/PostService';
+import { PostEntity } from './entities/PostEntity';
+import { CreatePostDto } from './dtos/CreatePostDto';
 
 @Controller('posts')
-export class PostController{
+export class PostController {
 
-    constructor(private postService: PostService){
+    constructor(private postService: PostService) {
     }
 
     @Get()
-    findAll(): Observable<PostModel[]>{
+    findAll(): Observable<PostEntity[]> {
         return this.postService.findAll();
+    }
+
+    @Post()
+    create(@Body() createPostDto: CreatePostDto) {
+        this.postService.create(createPostDto);
+        return 'ok';
     }
 }
