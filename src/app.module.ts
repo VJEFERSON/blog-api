@@ -1,20 +1,11 @@
 import { Module } from '@nestjs/common';
 import { BlogModule } from './blog/BlogModule';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostModule } from './blog/post/post.module';
 
 @Module({
   imports: [
-    BlogModule,
-    TypeOrmModule.forRoot({
-        type: 'postgres',
-        host: 'localhost',
-        port: 5432,
-        username: 'blog-user',
-        password: 'sublime',
-        database: 'blog-app',
-        entities: [__dirname + '/**/*Entity{.ts,.js}'],
-        synchronize: true,
-    }),
+    PostModule
   ],
   controllers: [],
   providers: [],
