@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { PostEntity } from '../../blog/post/post.entity';
+import { PostEntity } from '../../blog/posts/post/post.entity';
 
 export const databaseProviders = [
   {

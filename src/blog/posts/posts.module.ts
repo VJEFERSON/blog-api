@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
-import { PostController } from './post.controller';
+import { PostModule } from './post/post.module';
 
 @Module({
     imports: [
-        PostController,
+        PostModule,
     ],
     controllers: [],
     providers: [],
 })
-export class PostModule {
+export class PostsModule {
     constructor() {}
 }

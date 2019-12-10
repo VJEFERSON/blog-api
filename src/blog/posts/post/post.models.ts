@@ -1,19 +1,11 @@
-export interface CreatePostDto {
+export interface ICreatePost {
     title: string;
     subTitle: string;
     imageUrl: string;
     content: string;
 }
 
-export interface EditPostDto {
-    id: number;
-    title: string;
-    subTitle: string;
-    imageUrl: string;
-    content: string;
-}
-
-export class IPost {
+export interface IPost {
     id: number;
     title: string;
     subTitle: number;
